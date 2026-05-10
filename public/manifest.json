@@ -1,6 +1,6 @@
 {
-	"short_name": "Restreamer",
-	"name": "Restreamer",
+	"short_name": "MolloStream",
+	"name": "MolloStream",
 	"icons": [
 		{
 			"src": "favicon.ico",
@@ -20,6 +20,6 @@
 	],
 	"start_url": ".",
 	"display": "standalone",
-	"theme_color": "#282728",
-	"background_color": "#282728"
+	"theme_color": "#1e1e2e",
+	"background_color": "#1e1e2e"
 }

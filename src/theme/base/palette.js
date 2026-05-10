@@ -1,77 +1,83 @@
 /* eslint-disable import/no-anonymous-default-export */
+// Paleta Catppuccin Mocha — adoptada para MolloStream
+// Mantiene los keys originales de Restreamer para compatibilidad con todos
+// los componentes MUI que referencian palette.background.*, palette.error.*, etc.
+//
+// Mapeo: tonos grises/oscuros del Restreamer original → Mocha base/mantle/surface,
+// accents (success/warning/error) → catGreen/peach/catRed/catYellow.
 export default {
 	common: {
 		// MuiButton, ChannelList.js, index.js, Player.js
-		black: '#000',
+		black: '#11111b', // crust (más profundo que negro puro)
 		// Header.js, ChannelList.js, Edit->index.js
-		white: '#fff',
+		white: '#cdd6f4', // catText (off-white Mocha)
 	},
 	background: {
 		// MuiAccordion
-		accordion: 'rgba(77, 77, 77, .4)',
-		// MuiAccordion
-		accordion_border: 'rgba(128, 128, 128, .6)',
-		// MuiMenuItem, Header.js (MenuIcon, MenuItem), Progress.js (Progress boxes)
-		box_default: 'rgb(77, 77, 77)',
-		// MuiListItem, Progress.js (Progress boxes - danger)
-		box_danger: 'rgb(193, 39, 45)',
-		// MuiButton, global.js (Page background)
-		button_disabled: '#333333',
-		// MuiButton, MuiMenu, MuiToggleButton, MultiSelectOption.js (MenuItem)
-		dark1: 'rgba(0, 0, 0, .1)',
+		accordion: 'rgba(49, 50, 68, .6)',          // surface0 con alpha
+		accordion_border: 'rgba(108, 112, 134, .6)', // overlay0
+		// MuiMenuItem, Header.js, Progress.js
+		box_default: '#313244', // surface0
+		// MuiListItem, Progress.js (danger)
+		box_danger: '#f38ba8',  // catRed
+		// MuiButton, global.js (page background)
+		button_disabled: '#1e1e2e', // base
+		// MuiButton, MuiMenu, MuiToggleButton, MultiSelectOption.js
+		dark1: 'rgba(17, 17, 27, .25)',  // crust con alpha
 		// MuiOutlinedInput, BoxText.js (color=dark)
-		dark2: 'rgba(0, 0, 0, .25)',
+		dark2: 'rgba(17, 17, 27, .45)',
 		// Footer.js, Textarea.js, global.js (Scrollbar)
-		footer1: 'rgba(66, 61, 63, .9)',
-		// Footer.js, Textarea.js
-		footer2: 'rgba(39, 36, 37, .9)',
+		footer1: 'rgba(24, 24, 37, .9)',  // mantle
+		footer2: 'rgba(17, 17, 27, .9)',  // crust
 		// MuiAppBar, BoxText.js (color=light = default), TabsHorizontal.js, Paper.js
-		light1: 'rgba(255, 255, 255, .1)',
+		light1: 'rgba(205, 214, 244, .08)', // catText con alpha bajo
 		// MuiDialog, MuiPaper, MuiTooltip, Header.js, ModalContent.js, Dialog.js
-		modal: 'rgb(71, 71, 71)',
+		modal: '#313244',  // surface0
 		// BoxTextarea.js, Progress.js, Process.js, Textarea.js, gobal.js (textarea)
-		modalbox: 'rgb(91, 91, 91)',
-		// MuiFab, MuiListItem, MuiPaper, Headerjs,
-		paper: 'rgba(56, 56, 56, .95)',
+		modalbox: '#45475a', // surface1
+		// MuiFab, MuiListItem, MuiPaper, Header.js
+		paper: 'rgba(30, 30, 46, .95)', // base con alpha
 	},
 	default: {
-		main: '#686868',
+		main: '#9399b2', // overlay2
 	},
 	primary: {
 		// MuiOutlinedInput
-		light: '#919090',
+		light: '#cba6f7',  // mauve (color principal MolloStream)
 		// MuiAlert, MuiMenu, MuiOutlinedInput, MuiSelect
-		main: '#686868',
+		main: '#cba6f7',   // mauve
 		// MuiMenu, MuiOutlinedInput
-		dark: '#4D4D4D',
+		dark: '#b4befe',   // lavender
 		// MuiButton
-		contrastText: '#fff',
+		contrastText: '#1e1e2e', // base (sobre mauve claro)
 	},
 	secondary: {
+		// success / streams activos / acciones positivas
 		// MuiAlert, MuiButton, MuiFab, MuiOutlinedInput, MuiSelect, MuiToggleButton
-		main: '#39B54A',
+		main: '#a6e3a1',  // catGreen
 		// MuiButton, MuiFab
-		contrastText: '#fff',
+		contrastText: '#1e1e2e', // base (sobre verde claro)
 	},
 	service: {
+		// service color — botón "service" en login (originalmente amarillo brillante)
 		// MuiButton, Login.js
-		main: '#EAEA05',
+		main: '#f9e2af',  // catYellow
 		// Paper.js
-		contrastText: 'rgba(43,41,42,.95)',
+		contrastText: 'rgba(30, 30, 46, .95)',
 	},
 	error: {
 		// MuiAlert, MuiButton, BoxText.js (color=danger), Env.js
-		main: '#C1272D',
+		main: '#f38ba8',  // catRed
 		// MuiButton
-		contrastText: '#fff',
+		contrastText: '#1e1e2e',
 	},
 	warning: {
 		// MuiAlert, Main->index.js
-		main: '#E28014',
+		main: '#fab387',  // peach
 	},
 	selected: {
-		// MuiFab
-		main: '#fff',
+		// MuiFab — color del nodo seleccionado
+		main: '#cba6f7',  // mauve (consistente con primary)
 	},
 	text: {
 		// MuiBackdrop, MuiButton, MuiDialog, MuiFormLabel, MuiIconButton,
@@ -79,12 +85,9 @@ export default {
 		// MuiToggleButton, MuiTypography,
 		// Header.js, Checkbox.js, Env.js, LanguageSelect.js, ModalContent.js,
 		// TabsHorizontal.js, Dialog.js, global.js (Textarea)
-		primary: '#fff',
-		// MuiSelect, MuiTab, Footer.js, Header.js
-		secondary: 'rgba(255, 255, 255, 0.7)',
-		// MuiCheckbox, Checkbox.js
-		disabled: 'rgba(255, 255, 255, 0.38)',
-		// MuiTypography
-		hint: 'rgba(255, 255, 255, 0.7)',
+		primary: '#cdd6f4',                     // catText
+		secondary: 'rgba(166, 173, 200, 0.85)', // subtext0 con alpha
+		disabled: 'rgba(127, 132, 156, 0.6)',   // overlay1 con alpha
+		hint: 'rgba(186, 194, 222, 0.7)',       // subtext1 con alpha
 	},
 };
